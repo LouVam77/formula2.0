@@ -1,0 +1,49 @@
+#myButton {
+    background-color: mediumorchid !important; 
+    color: white !important;
+    width: 50% !important;
+    height: 10vw !important;
+    border-color: transparent !important;
+    margin: 25% !important;
+}
+
+button {
+    background-color: mediumorchid;
+    color: white;
+    border-color: transparent; 
+    margin: 2%;
+}
+
+
+#miDiv {
+  width: 90%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 40px;
+}
+
+#miDiv li {
+  width: 90%;
+  background-color: #f0f0f0;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#miDiv li p {
+  margin: 0;
+}
+
+input {
+    width: 120px;
+}
+
+textarea {
+    width:60%;
+}
+
+button {
+    margin-left: 40px;
+}
