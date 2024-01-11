@@ -6,6 +6,9 @@
     <title>ParaAlguienMuyLindo</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="minegri.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+    </style>
     <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js' 
@@ -32,6 +35,8 @@
     
     const buttonEnviar = document.querySelector("#btnEnviar");
 
+
+
     buttonEnviar.addEventListener("click", (e) => {
       e.preventDefault();
 
@@ -40,6 +45,7 @@
 
       var descripcion = document.getElementById("descripcion").value;
       var nombre = document.getElementById("nombre").value;
+
 
       if (nombre.trim() === "" || descripcion.trim() === "") {
         Swal.fire({
@@ -63,11 +69,12 @@
         );
 
         document.getElementById("descripcion").value = "";
-        document.getElementById("nombre").value = "";
       }).catch(error => {
           console.log(error);
       });
+  
     });
+
 // Obtener la referencia al elemento de la lista en el HTML
     const db = getFirestore(app);
     const dbRef = collection(db, "users");
@@ -83,6 +90,7 @@
    const nombre = datos.nombre;
    const descripcion = datos.descripcion;
    
+ 
   // Utiliza Object.values para obtener un array de los valores
    const valores = Object.values(datos);
 
@@ -99,12 +107,18 @@ valores.forEach((dato) => {
 
 </script>
 </head>
-<body>
-    <div>
+<body id="todito">
+    <div id="partesuperior">
+        <img id="fotonosotros" src="nosotros.jpg">
+        <p id="privado">Chat privado</p>
+    </div>
+    <div id="chat">
         <form>
           <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu usuario"><br><br>
-          <textarea id="descripcion" required></textarea>
-          <button type="button" id="btnEnviar">Enviar</button>
+          <span>
+            <textarea id="descripcion" required></textarea>
+            <button type="button" id="btnEnviar">Enviar</button>
+          </span>
         </form>
     </div>
     <div id="miDiv"></div>
